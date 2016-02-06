@@ -1,0 +1,42 @@
+\section{Anneaux}
+  \begin{definition}[Anneau]
+    Soit $A$ un ensemble non vide muni de deux lois de composition $+$ et $*$.
+
+    On dit que $(A,+,*)$ est un anneau si: \begin{itemize}
+      \item $(A,+)$ est un groupe abélien
+      \item $*$ est associative
+      \item $*$ est distributive par rapport à $+$
+      \item Il existe un élément neutre pour $*$
+    \end{itemize}
+  \end{definition}
+
+  $(\ZZ,+,\times), (\RR,+,\times)$ sont des anneaux,
+  $(\mathcal{M}_n, +,\times)$ aussi, mais non commutatif.
+
+
+  \begin{definition}[Sous-anneau]
+    Soit $(A,+,*)$ un anneau.
+
+    On dit que $(B,+,*)$ est un anneau si: \begin{itemize}
+      \item $\emptyset \neq B \subseteq A$
+      \item $(B,+)$ est un sous-groupe additif
+      \item $B$ est laissé stable par $*$
+      \item $e_A \in B$
+    \end{itemize}
+  \end{definition}
+
+
+  \begin{definition}[Corps]
+    Un anneau $(A,+,*)$ est un corps si:\begin{itemize}
+      \item $\#A>2$
+      \item $\forall x\in A\backslash \{ 0_+\}, \exists x^{-1} \text{ pour } *$
+    \end{itemize}
+  \end{definition}
+
+
+  \begin{definition}[Intégrité]
+    Un anneau $(A,+,*)$ est intègre si $x*y=0 \iff x=0\vee y=0$.
+  \end{definition}
+
+
+%Fin du cours 1
