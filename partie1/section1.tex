@@ -1,0 +1,112 @@
+\section{Groupe}
+  \begin{definition}[Loi de composition interne]
+    Est appelée loi de composition interne toute application $\varphi$:\begin{eqnarray*}
+      \varphi : X\times X &\rightarrow& X\\
+                (x, y)    &\mapsto& \varphi(x,y)
+  \end{eqnarray*}
+  \end{definition}
+
+  On insère souvent un symbole à la place de $\varphi$: \[
+    \varphi(x,y) = x*y \in X
+  \]
+
+  L'addition usuelle est une loi de composition interne dans $\NN,\ZZ,\QQ,\RR,\CC,\RR^k$.
+
+  La composition ($\circ$) est une loi de composition interne sur $\mathcal{F}(E,E)$.
+
+  Soit $X = \mathcal{P}(E)$. L'union ($\cup$), l'intersection ($\cap$) sont des
+  lois de composition interne.
+
+  Le produit scalaire $a.b := \begin{cases} \parenthesis{\mathbb{K}^n}^2\to\mathbb{K}\\
+                                            (a,b)\mapsto\sum_{i=0}^n a_i b_i
+                               \end{cases}$ n'est pas une loi de composition interne.
+
+\begin{definition}[Groupe]
+  Soit $G$ un ensemble muni d'une loi de composition interne $*$.
+
+  On dit que $(G,*)$ est un groupe si: \begin{itemize}
+    \item $*$ admet un élément neutre
+    \item $*$ est associative
+    \item Pour tout élément de $G$ il en existe un inverse pour $*$.
+  \end{itemize}
+\end{definition}
+
+$(\ZZ,+),(\RR,+),(\QQ,+),(\CC,+),(\QQ^*,\times),(\RR^*,\times),(\CC^*,\times),(\rdbrackets{\pm 1},\times)$
+sont tous des groupes, mais $(\ZZ^*, \times)$ n'en est pas un.
+
+$0$ n'a jamais d'inverse.
+
+$(\mathcal{B}(E) = \rdbrackets{\text{bijections de $E$}}, \circ)$ est un groupe.
+
+$(\mathbb{D},+)$ est un groupe additif. $(\mathbb{D}\backslash\rdbrackets{0},\times)$ n'en est pas un.
+
+\begin{definition}[Commutativité]
+  $*$ sur $X$ non vide est dite commutative si
+  \[
+    \forall x, y \in X, x*y = y*x
+  \]
+\end{definition}
+
+\begin{definition}[Groupe abélien]
+   Un groupe $(G,*)$ où $*$ est commutative est dit \emph{groupe commutatif} ou
+   \emph{groupe abélien}.
+\end{definition}
+
+$\parenthesis{\mathcal{GL}\parenthesis{\RR^2}, \circ}$ est non abélien.
+
+\paragraph{Notation additive}
+  Lors qu'un groupe $(E,+)$ est abélien, alors il est usuel de noter son
+  élément neutre $0$ et les inverses $-x$.
+
+\begin{definition}[Sous-groupe]
+  Soit $(G,*)$ un groupe, $H\subseteq G$, $H\neq \emptyset$.
+
+  $(H,*)$ est un sous-groupe de $G$ si $*$ est interne à $H$ et $(H,*)$ est un groupe.
+\end{definition}
+
+$(\ZZ,+)$ est un sous-groupe $(\CC,+)$.
+
+\paragraph{Caractérisation}
+  Soit $(G,*)$ un groupe, $H\subseteq G$, $H\neq \emptyset$.
+  Alors $(H,*)$ est un sous-groupe si $\begin{cases}
+    \forall x,y\in H, x*y\in H\\
+    \forall x\in H, x^{-1} \in H
+  \end{cases}$ ou $\forall x,y \in H, xy^{-1}\in H$.
+
+
+\begin{proposition}[Unicité de l'élément neutre]
+  Soit $(G,*)$ un groupe. Alors il existe un unique élément neutre $e$.
+\end{proposition}
+
+\begin{proof}
+  \begin{eqnarray*}
+    \forall x \in G: x*e=e*x = e'*x = x*e' = x\\
+    \begin{cases}
+      xe &= xe'\\
+      ex &= e'x
+    \end{cases} \iff
+      x^{-1}xe = x^{-1}xe' \iff e= e'
+  \end{eqnarray*}
+\end{proof}
+
+\begin{proposition}[Unicité de l'inverse]
+
+    Soit $(G,*)$ un groupe. Alors $\forall x\in G, \exists ! x^{-1} : x*x^{-1}=x^{-1}*x = e$.
+\end{proposition}
+
+\begin{definition}[Groupe produit]
+  Soient $(G,*)$, $(G', *')$ deux groupes.
+
+  Alors on définit le groupe produit par : $(G\times G', *\times *' = \square)$
+\end{definition}
+
+\subsection{Morphisme de groupes}
+  \begin{definition}
+      Soient $(G,*)$, $(G', *')$ deux groupes.
+
+      On appelle morphisme de $(G,*)$ dans $(G',*')$ une application $\varphi : G \rightarrow G'$ telle que \[
+        \forall x,y \in G, \varphi(x*y) = \varphi(x)*'\varphi(y)
+      \]
+  \end{definition}
+
+  On a alors $\varphi(1_G) = 1_{G'}$ et $\varphi(x^{-1}) = \varphi(x)^{-1}$.
